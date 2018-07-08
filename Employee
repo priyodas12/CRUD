@@ -1,18 +1,26 @@
 package beans;
 
+import java.util.Date;
+
+import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
-@Entity
-@Table(name="Employee01")
+
+@Entity(name="EMPREG_SAMPLE")
+@Table(name="Employee_Reg")
 public class Employee {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="EmpId")
 	private int empId;
 	
@@ -22,18 +30,32 @@ public class Employee {
 	@Column(name="Last_Name")
 	private String lName;
 	
-	@Column(name="EmailId")
+	@Basic(if column name was not set externally then same property will be pushed)
 	private String emailId;
 	
 	@Column(name="salary")
 	private int salary;
-	
+	 
 	@Column(name="Department")
+	
+	//@Transient **If you wanted to ignore this field to be added**
 	private String department;
 	
-	@Column(name="DOJ")
+	@Temporal(TemporalType.DATE)//timestap default.Temporal.Date saves only date
 	private Date joinedDate;
 	
+	@Column(name="MyAddress")
+	@Lob //for saving long length string.
+	private String address;
+	
+	
+	
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
 	public Date getJoinedDate() {
 		return joinedDate;
 	}
@@ -79,4 +101,8 @@ public class Employee {
 	public Employee() {
 		super();
 	}
+	
+	
+	
+
 }
