@@ -17,6 +17,12 @@ public class Test {
 		
 		//For CRUD_Select operation.
 		Employee emp=new Employee();
+		Address a=new Address();
+		
+		a.setCity("Kolkata");
+		a.setPetrolPrice(89.9);
+		a.setPincode(700120);
+		a.setState("Bengal");
 		
 		emp.setlName("Tudu");
 		emp.setfName("Hori");
@@ -24,7 +30,7 @@ public class Test {
 		emp.setSalary(129020);
 		emp.setDepartment("IT Prof");
 		emp.setJoinedDate(new Date());
-		emp.setAddress("Bellandur,560103,Banglore,Karnataka");
+		emp.setAddress(a);
 		
 		
 		//***********employee object state is transient********************
