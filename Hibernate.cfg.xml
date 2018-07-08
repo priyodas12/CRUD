@@ -17,7 +17,7 @@
 			
 			<!-- Automatic table creation update -->
 			<property name="hbm2ddl.auto">update</property>
+			<mapping class="beans.Employee"/>
 			
-			<mapping resource="resources/address.hbm.xml"/> 
 		</session-factory>
 	</hibernate-configuration>
