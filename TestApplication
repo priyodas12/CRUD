@@ -1,14 +1,16 @@
 package client;
 
+import java.util.Date;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-
+import beans.Address;
 import beans.Employee;
 
-public class TestApplication {
+public class Test {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -16,13 +18,14 @@ public class TestApplication {
 		//For CRUD_Select operation.
 		Employee emp=new Employee();
 		
-		emp.setEmpId(5607);
 		emp.setlName("Tudu");
 		emp.setfName("Hori");
 		emp.setEmailId("hori@live.com");
 		emp.setSalary(129020);
 		emp.setDepartment("IT Prof");
 		emp.setJoinedDate(new Date());
+		emp.setAddress("Bellandur,560103,Banglore,Karnataka");
+		
 		
 		//***********employee object state is transient********************
 		
@@ -38,6 +41,9 @@ public class TestApplication {
 		//***********employee object state is Persistent*******************.
 		
 		Transaction t=s.beginTransaction();
+		
+		
+		s.save(emp);//any cost it will update(merge)
 		t.commit();
 		
 		//***********employee object moved to Database stage.**************
