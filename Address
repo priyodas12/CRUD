@@ -6,9 +6,13 @@ import javax.persistence.Id;
 
 public class Address {
 	
+	@Basic(fetch=FetchType.LAZY)
 	private String city;
+	@Basic(fetch=FetchType.LAZY)
 	private String state;
+	@Basic(fetch=FetchType.LAZY)
 	private long pincode;
+	@Basic(fetch=FetchType.LAZY)
 	private double petrolPrice;
 	
 	public double getPetrolPrice() {
