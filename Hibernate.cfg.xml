@@ -18,6 +18,6 @@
 			<!-- Automatic table creation update -->
 			<property name="hbm2ddl.auto">update</property>
 			<mapping class="beans.Employee"/>
-			
+			<mapping class="beans.Address"/>
 		</session-factory>
 	</hibernate-configuration>
