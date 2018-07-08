@@ -5,10 +5,10 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-import beans.Address;
+
 import beans.Employee;
 
-public class Test {
+public class TestApplication {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -22,7 +22,7 @@ public class Test {
 		emp.setEmailId("hori@live.com");
 		emp.setSalary(129020);
 		emp.setDepartment("IT Prof");
-		
+		emp.setJoinedDate(new Date());
 		
 		//***********employee object state is transient********************
 		
