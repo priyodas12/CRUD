@@ -31,6 +31,15 @@ public class Employee {
 	@Column(name="Department")
 	private String department;
 	
+	@Column(name="DOJ")
+	private Date joinedDate;
+	
+	public Date getJoinedDate() {
+		return joinedDate;
+	}
+	public void setJoinedDate(Date joinedDate) {
+		this.joinedDate = (Date)joinedDate;
+	}
 	public int getEmpId() {
 		return empId;
 	}
