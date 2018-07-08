@@ -1,0 +1,42 @@
+package beans;
+
+import javax.persistence.Embeddable;
+import javax.persistence.Id;
+
+
+public class Address {
+	
+	private String city;
+	private String state;
+	private long pincode;
+	private double petrolPrice;
+	
+	public double getPetrolPrice() {
+		return petrolPrice;
+	}
+	public void setPetrolPrice(Double petrolPrice) {
+		this.petrolPrice = petrolPrice;
+	}
+	public Address() {
+		super();
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public String getState() {
+		return state;
+	}
+	public void setState(String state) {
+		this.state = state;
+	}
+	public long getPincode() {
+		return pincode;
+	}
+	public void setPincode(long pincode) {
+		this.pincode = pincode;
+	}
+	
+}
