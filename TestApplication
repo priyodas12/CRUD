@@ -53,6 +53,15 @@ public class Test {
 		//Employee object will be removed from persistent alike removed from session object.
 		//garbage collector will capture this object.
 		
+		/****get perticular email id which has inserted*****************
+		emp=null;
+		
+		Session s1=sessionFactory.openSession();
+		s1.beginTransaction();
+		emp=(Employee)s1.get(Employee.class, 1);
+		System.out.println("Retrived_email: "+emp.getEmailId());
+		*/
+		
 		/*for CRUD_Update  operation.
 								
 				Employee emp1=new Employee();
